@@ -1,0 +1,29 @@
+<!-- <button *ngIf="user" (click)="logout()">Logout</button> -->
+<app-navbar></app-navbar>
+<body class="pt-5" style="text-align: center;">
+    <form *ngIf="user" #myForm = "ngForm" (ngSubmit)="createList(myForm.value)" class="h6">
+        <label class="mr-2">Task Name :</label> <input type="text" name = "taskName" ngModel style="border-radius: 5px;border:none" class="p-2" minlength="1" maxlength="20">
+        <label class="mr-2 ml-2">Category :</label>
+        <select id="" name="category" ngModel style="border-radius: 5px;border:none" class="p-2">
+            <option value="Function">Function</option>
+            <option value="Study">Study</option>
+            <option value="Meeting">Meeting</option>
+            <option value="Exercise">Exercise</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Others">Others</option>
+        </select>
+        <label class="mr-2 ml-2">Description :</label> <input type="text" maxlength="30" name = "description" ngModel style="border-radius: 5px;border:none" class="p-2">
+        <label class="mr-2 ml-2">Priority :</label>
+        <select id="" name="priority" ngModel style="border-radius: 5px;border:none" class="p-2">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <button type="submit" class="btn btn-primary ml-3 pl-4 pr-4">
+            Add <i class="fa fa-plus" aria-hidden="true"></i></button>
+    </form>
+    
+    <app-display *ngIf="user"></app-display>
+</body>
+
+

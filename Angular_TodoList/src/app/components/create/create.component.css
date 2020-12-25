@@ -1,0 +1,14 @@
+body{
+    background-image: linear-gradient(rgb(156, 156, 184),rgb(0, 68, 255));
+    padding-bottom: 15vw;
+}
+form{
+    /* border:1px solid black; */
+    padding-bottom:2vw;
+    padding-top: 2vw;
+    width:90%;
+    margin-left: 5vw;
+    background-color:rgba(0, 0, 0, 0.829);
+    border-radius: 1vw;
+    color: lightcyan;
+}

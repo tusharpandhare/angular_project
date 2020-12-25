@@ -1,0 +1,37 @@
+<body>
+
+<div style="width: 30%;margin:auto" class="pt-5" >
+    <form action="" class="p-5" style="background-color: azure; border-radius: 2vw; height: 35vw;">
+        <h3 class="text-DARK text-center pb-4">LOGIN</h3>
+        <!-- <div class="form-group mb-3">
+            <input type="text" placeholder="Enter the User Name" style="width: 100%;border-radius: 1vw;border:1px solid grey" class="pl-2 pt-2 pb-2">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Enter the Password" style="width: 100%;border-radius: 1vw;border:1px solid grey" class="pl-2 pt-2 pb-2">
+        </div>
+        <div class="form-group text-left" style="width:50%;float:left">
+            <button class=" pl-5 pr-5 pt-2 pb-2 bg-success text-white d-inline-block" style="border-radius: 1vw; border: 1px green;">Login</button>
+        </div>
+        <div class="form-group text-right mb-4">
+            <button class=" pl-5 pr-5 pt-2 pb-2 bg-success text-white" style="border-radius: 1vw; border: 1px green;">Sign In</button>
+        </div> -->
+        <i class="fa fa-lock mb-2" aria-hidden="true" style="font-size: 10vw;margin-left: 8.5vw;color:rgb(150, 55, 0)"></i>
+
+        <div class="form-group" class="text-center">
+            <button class="btn btn-danger font-weight-bold" *ngIf="!user" (click)="login()" routerLink="/create"><i class="fa fa-google-plus" aria-hidden="true"></i>
+                LOGIN WITH GOOGLE</button>
+            <!-- <button *ngIf="user" (click)="logout()">Logout</button> -->
+        </div>
+
+        <h4 class=" text-center mt-1 mb-2" >--or--</h4>
+
+        <div class="form-group" class="text-center">
+            <button class="btn btn-info font-weight-bold" *ngIf="!user" (click)="loginFB()" routerLink="/create" ><i class="fa fa-facebook" aria-hidden="true"></i>
+                - LOGIN WITH FACEBOOK</button>
+        </div>
+
+        <!-- <app-create *ngIf="user"></app-create> -->
+        <!-- <app-display *ngIf="user"></app-display> -->
+    </form>
+</div>
+</body>

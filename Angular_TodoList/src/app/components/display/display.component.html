@@ -1,0 +1,78 @@
+<h3 class=" mt-5 font-weight-bold" style="color: black;">TASK LIST</h3>
+<!-- <ul>
+    <li *ngFor ="let task of tasks">
+        {{task.taskName}} => {{task.priority}} => {{task.description}};
+        <button class="btn btn-danger" (click)="deleteTask(task)">Delete</button>
+        <button *ngIf ="!updateFlag" class="btn btn-info" (click)="updateTask(task)">Update</button>
+        <br><br>
+        
+        <div *ngIf="updateFlag && task.id == tempData.id">
+            <input type="text" placeholder="Enter the task Name" [(ngModel)]="updatedname" name="updatedname">
+            <input type="text" placeholder="Enter the task Priority" [(ngModel)]="updatedcategory" name="updatedcategory">
+            <input type="text" placeholder="Enter the task Description" [(ngModel)]="updateddescription" name="updateddescription">
+            <button  (click)="updateSubmit(task)">Update</button>
+        </div>
+    </li>
+</ul> -->
+<div style="text-align: center;">
+    <input type="text" [(ngModel)]="searchName" class="mt-3 mb-3 pl-3 pr-5 pt-2 pb-2"
+        style="border-radius: 2vw; border:none" placeholder="Search By Name..">
+</div>
+<i class="fas fa-trash-alt"></i>
+<table class="m-auto" style="width:85%" style="text-align: justify;">
+    <tr>
+        <th>TASK NAME</th>
+        <th>CATEGORY</th>
+        <th>DESCRIPTION</th>
+        <th>PRIORITY</th>
+        <th>SELECT CHOICE</th>
+    </tr>
+    <tr *ngFor="let task of tasks | filter:searchName">
+        <td style="text-transform: capitalize;">{{task.taskName}}</td>
+        <td style="text-transform: capitalize;">{{task.category}}</td>
+        <td style="text-transform: capitalize;">{{task.description}}</td>
+        <td style="text-transform: capitalize;">{{task.priority}}</td>
+        <td><button *ngIf="!deleteFlag" class="btn btn-danger" (click)="deleteTask(task)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+
+
+            Delete</button>
+            <button *ngIf="!updateFlag" class="btn btn-info" (click)="updateTask(task)">Edit
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+
+            </button>
+
+    <tr *ngIf="updateFlag && task.id == tempData.id">
+        <td><input type="text" style="border-radius: 5px;border:none" placeholder="Enter the task Name"
+                [(ngModel)]="updatedname" name="updatedname"></td>
+        <td><select id="" name="category" [(ngModel)]="updatedcategory" name="updatedcategory"
+                style="border-radius: 5px;border:none">
+                <option value="Function">Function</option>
+                <option value="Study">Study</option>
+                <option value="Metting">Meeting</option>
+                <option value="Exercise">Exercise</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Others">Others</option>
+            </select>
+        </td>
+        <!-- <td><input type="text" placeholder="Enter the task Category" [(ngModel)]="updatedcategory" name="updatedcategory"></td> -->
+        <td><input type="text" style="border-radius: 5px;border:none" placeholder="Enter the task Description"
+            maxlength="30"  [(ngModel)]="updateddescription" name="updateddescription"></td>
+        <!-- <td><input type="text" placeholder="Enter the task Priority" [(ngModel)]="updatedpriority"
+                name="updatedpriority"></td> -->
+        <td>
+            <select id="" name="priority" [(ngModel)]="updatedpriority" name="updatedpriority"
+                style="border-radius: 5px;border:none">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </td>
+        <td>
+            <button (click)="updateSubmit()" class="btn btn-success">
+                <i class="fa fa-pencil-square" aria-hidden="true"></i>Update</button></td>
+    </tr>
+    </td>
+    </tr>
+</table>
+<!-- <p *ngFor = "let task of tasks">{{ task | json }}</p> -->
